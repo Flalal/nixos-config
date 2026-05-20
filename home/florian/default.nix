@@ -14,6 +14,9 @@
     gh
     obsidian
     jetbrains.idea-ultimate
+    jq
+    bc
+    libsecret
   ];
 
   # Git — identité et préférences
