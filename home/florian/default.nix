@@ -11,6 +11,7 @@
   # Paquets installés rien que pour florian (en plus de ceux du système)
   home.packages = with pkgs; [
     claude-code
+    gh
   ];
 
   # Git — identité et préférences
