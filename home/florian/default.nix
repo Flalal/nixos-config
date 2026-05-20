@@ -12,6 +12,8 @@
   home.packages = with pkgs; [
     claude-code
     gh
+    obsidian
+    jetbrains.idea-ultimate
   ];
 
   # Git — identité et préférences
