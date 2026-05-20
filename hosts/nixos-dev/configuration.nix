@@ -59,6 +59,23 @@
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
+    # Sink audio virtuel : la VM n'a pas de carte son. On crée une sortie
+    # "null" pour que les applis aient une destination et que Sunshine puisse
+    # la capturer (le moniteur du sink) -> son dans Moonlight.
+    extraConfig.pipewire."10-sunshine-sink" = {
+      "context.objects" = [{
+        factory = "adapter";
+        args = {
+          "factory.name" = "support.null-audio-sink";
+          "node.name" = "sunshine-sink";
+          "node.description" = "Sunshine Audio Sink";
+          "media.class" = "Audio/Sink";
+          "audio.position" = "[ FL FR ]";
+          "priority.driver" = 2000;   # priorité haute => sink par défaut
+          "priority.session" = 2000;
+        };
+      }];
+    };
   };
 
   # --- Bureau distant : Sunshine (client : Moonlight) -------------------------
