@@ -33,6 +33,7 @@
       la = "ls -la";
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-config#nixos-dev";
       nflake = "cd ~/nixos-config";
+      cc = "cd ~/obsidian-vault && claude";
     };
   };
 
