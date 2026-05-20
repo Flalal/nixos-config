@@ -17,6 +17,7 @@
     jq
     bc
     libsecret
+    vivaldi
   ];
 
   # Git — identité et préférences
