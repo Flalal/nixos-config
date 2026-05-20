@@ -10,7 +10,7 @@
 
   # Paquets installés rien que pour florian (en plus de ceux du système)
   home.packages = with pkgs; [
-    # btop ripgrep fd ...  -> à compléter quand tu en veux
+    claude-code
   ];
 
   # Git — identité et préférences
