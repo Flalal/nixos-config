@@ -4,6 +4,8 @@
 #   sudo nixos-rebuild switch --flake .#nixos-dev
 { pkgs, ... }:
 {
+  imports = [ ./waybar.nix ];
+
   home.username = "florian";
   home.homeDirectory = "/home/florian";
   home.stateVersion = "25.11";
@@ -18,7 +20,15 @@
     bc
     libsecret
     vivaldi
+    # Dépendances Waybar
+    nerd-fonts.jetbrains-mono
+    font-awesome
+    pavucontrol
+    networkmanagerapplet
+    wlogout
   ];
+
+  fonts.fontconfig.enable = true;
 
   # Git — identité et préférences
   programs.git = {
