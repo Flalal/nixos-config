@@ -37,6 +37,8 @@
     # Audio / réseau (control panels)
     pavucontrol
     networkmanagerapplet
+    nautilus
+    gvfs
     # Polkit agent (popup mot de passe pour apps GUI)
     polkit_gnome
     # Wallpaper daemon
