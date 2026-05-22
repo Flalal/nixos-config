@@ -26,41 +26,41 @@
       "hyprland/workspaces" = {
         format = "{icon}";
         format-icons = {
-          active = "";
-          default = "";
-          urgent = "";
+          active = "";
+          default = "";
+          urgent = "";
         };
         on-click = "activate";
         persistent-workspaces."*" = 5;
       };
 
       clock = {
-        format = "{:%H:%M}";
+        format = "  {:%H:%M}";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       };
 
       pulseaudio = {
         format = "{icon}  {volume}%";
-        format-muted = "  muted";
-        format-icons.default = [ "" "" "" ];
+        format-muted = "  muted";
+        format-icons.default = [ "" "" "" ];
         on-click = "pavucontrol";
       };
 
       network = {
-        format-wifi = "  {essid}";
-        format-ethernet = "  {ifname}";
-        format-disconnected = "  disconnected";
+        format-wifi = "  {essid}";
+        format-ethernet = "  {ifname}";
+        format-disconnected = "  disconnected";
         tooltip-format = "{ifname}: {ipaddr}";
         on-click = "nm-connection-editor";
       };
 
       cpu = {
-        format = "  {usage}%";
+        format = "  {usage}%";
         interval = 2;
       };
 
       memory = {
-        format = "  {percentage}%";
+        format = "  {percentage}%";
         interval = 2;
       };
 
@@ -70,13 +70,14 @@
       };
 
       "custom/exit" = {
-        format = "";
+        format = "";
         on-click = "wlogout";
         tooltip = false;
       };
     };
 
     style = ''
+      /* Palette: Tokyo Night */
       * {
         font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
         font-size: 13px;
@@ -84,34 +85,26 @@
       }
 
       window#waybar {
-        background: rgba(30, 30, 46, 0.5);
-        color: #cdd6f4;
+        background: rgba(26, 27, 38, 0.55);
+        color: #c0caf5;
         border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(122, 162, 247, 0.15);
       }
 
-      #workspaces {
-        padding: 0 4px;
-      }
+      #workspaces { padding: 0 4px; }
 
       #workspaces button {
-        color: #6c7086;
+        color: #565f89;
         padding: 0 6px;
         background: transparent;
         border: none;
         transition: color 0.2s ease;
       }
 
-      #workspaces button.active {
-        color: #89b4fa;
-      }
-
-      #workspaces button.urgent {
-        color: #f38ba8;
-      }
-
+      #workspaces button.active { color: #7aa2f7; }
+      #workspaces button.urgent { color: #f7768e; }
       #workspaces button:hover {
-        color: #cdd6f4;
+        color: #c0caf5;
         background: transparent;
         box-shadow: none;
         text-shadow: none;
@@ -129,29 +122,28 @@
 
       #clock {
         font-weight: bold;
+        color: #7aa2f7;
         padding-left: 14px;
       }
 
       #custom-exit {
-        color: #f38ba8;
+        color: #f7768e;
         padding-left: 14px;
         padding-right: 14px;
       }
 
       #network.disconnected,
       #pulseaudio.muted {
-        color: #f38ba8;
+        color: #f7768e;
       }
 
       tooltip {
-        background: rgba(30, 30, 46, 0.95);
+        background: rgba(26, 27, 38, 0.95);
         border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(122, 162, 247, 0.2);
       }
 
-      tooltip label {
-        color: #cdd6f4;
-      }
+      tooltip label { color: #c0caf5; }
     '';
   };
 }

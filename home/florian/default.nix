@@ -4,7 +4,7 @@
 #   sudo nixos-rebuild switch --flake .#nixos-dev
 { pkgs, ... }:
 {
-  imports = [ ./waybar.nix ];
+  imports = [ ./waybar.nix ./wofi.nix ];
 
   home.username = "florian";
   home.homeDirectory = "/home/florian";
