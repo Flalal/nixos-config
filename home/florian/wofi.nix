@@ -31,7 +31,7 @@
       }
 
       window {
-        background-color: rgba(26, 27, 38, 0.96);
+        background-color: rgba(36, 40, 59, 0.96);
         border: 1px solid rgba(122, 162, 247, 0.4);
         border-radius: 12px;
         color: #c0caf5;

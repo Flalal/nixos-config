@@ -4,14 +4,22 @@
 #   sudo nixos-rebuild switch --flake .#nixos-dev
 { pkgs, ... }:
 {
-  imports = [ ./waybar.nix ./wofi.nix ];
+  imports = [
+    ./waybar.nix
+    ./wofi.nix
+    ./mako.nix
+    ./kitty.nix
+    ./hyprlock.nix
+    ./wlogout.nix
+    ./gtk.nix
+  ];
 
   home.username = "florian";
   home.homeDirectory = "/home/florian";
   home.stateVersion = "25.11";
 
-  # Paquets installés rien que pour florian (en plus de ceux du système)
   home.packages = with pkgs; [
+    # Outils utilisateur
     claude-code
     gh
     obsidian
@@ -20,15 +28,47 @@
     bc
     libsecret
     vivaldi
-    # Dépendances Waybar
+    # Polices
     nerd-fonts.jetbrains-mono
     font-awesome
+    # Audio / réseau (control panels)
     pavucontrol
     networkmanagerapplet
-    wlogout
+    # Polkit agent (popup mot de passe pour apps GUI)
+    polkit_gnome
+    # Wallpaper daemon
+    swww
+    # Screenshots
+    grim
+    slurp
+    hyprshot
+    # Clipboard manager
+    wl-clipboard
+    cliphist
   ];
 
   fonts.fontconfig.enable = true;
+
+  services.cliphist.enable = true;
+
+  home.file."Pictures/wallpaper.png".source = ./files/wallpaper.png;
+
+  # Agent polkit (popup mot de passe pour apps GUI)
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+    Unit = {
+      Description = "polkit-gnome-authentication-agent-1";
+      Wants = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+    };
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
 
   # Git — identité et préférences
   programs.git = {

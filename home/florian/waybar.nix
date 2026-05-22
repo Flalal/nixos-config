@@ -85,7 +85,7 @@
       }
 
       window#waybar {
-        background: rgba(26, 27, 38, 0.55);
+        background: rgba(36, 40, 59, 0.55);
         color: #c0caf5;
         border-radius: 12px;
         border: 1px solid rgba(122, 162, 247, 0.15);
@@ -138,7 +138,7 @@
       }
 
       tooltip {
-        background: rgba(26, 27, 38, 0.95);
+        background: rgba(36, 40, 59, 0.95);
         border-radius: 8px;
         border: 1px solid rgba(122, 162, 247, 0.2);
       }
