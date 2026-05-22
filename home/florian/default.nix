@@ -23,7 +23,7 @@
     claude-code
     gh
     obsidian
-    jetbrains.idea-ultimate
+    jetbrains.idea
     jq
     bc
     libsecret
@@ -73,9 +73,9 @@
   # Git — identité et préférences
   programs.git = {
     enable = true;
-    userName = "Florian Flahaut";
-    userEmail = "fflahaut@flal.fr";
-    extraConfig = {
+    settings = {
+      user.name = "Florian Flahaut";
+      user.email = "fflahaut@flal.fr";
       init.defaultBranch = "main";
       pull.rebase = false;
     };
