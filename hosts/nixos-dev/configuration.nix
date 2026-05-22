@@ -10,6 +10,7 @@
 {
   imports = [
     ./hardware-configuration.nix   # matériel détecté automatiquement — ne pas éditer
+    ./bluetooth.nix
   ];
 
   # --- Démarrage (UEFI) -------------------------------------------------------
