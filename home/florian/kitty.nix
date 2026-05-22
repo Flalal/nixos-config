@@ -26,7 +26,7 @@
       foreground            #c0caf5
       background            #24283b
       selection_foreground  #c0caf5
-      selection_background  #283457
+      selection_background  #3d59a1
 
       cursor                #c0caf5
       cursor_text_color     #24283b
