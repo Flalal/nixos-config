@@ -12,6 +12,9 @@
     ./hyprlock.nix
     ./wlogout.nix
     ./gtk.nix
+    ./swayosd.nix
+    ./tmux.nix
+    # ./laptop      # dormant — voir laptop/README.md pour activer
   ];
 
   home.username = "florian";
@@ -98,6 +101,30 @@
     enable = true;
     nix-direnv.enable = true;
   };
+
+  # fzf — fuzzy finder, intégration shell (Ctrl+R history, Ctrl+T files, Alt+C cd)
+  programs.fzf = {
+    enable = true;
+    enableBashIntegration = true;
+    defaultOptions = [
+      "--color=bg+:#283457,bg:#1f2335,spinner:#7dcfff,hl:#bb9af7"
+      "--color=fg:#c0caf5,header:#bb9af7,info:#7aa2f7,pointer:#7dcfff"
+      "--color=marker:#9ece6a,fg+:#c0caf5,prompt:#7aa2f7,hl+:#bb9af7"
+      "--height 40% --layout=reverse --border"
+    ];
+  };
+
+  # udiskie — auto-mount des USB + icône tray
+  services.udiskie = {
+    enable = true;
+    tray = "auto";
+    automount = true;
+    notify = true;
+  };
+
+  # Vivaldi userCSS Tokyo Night (activation manuelle : Settings → Appearance →
+  # Use Custom UI Modifications → pointer ~/.config/vivaldi-custom.css)
+  xdg.configFile."vivaldi-custom.css".source = ./files/vivaldi-custom.css;
 
   # === Fichiers de config "bruts" gérés par home-manager ===
   # Ils sont stockés comme fichiers normaux dans home/florian/files/ et

@@ -1,0 +1,76 @@
+/* =============================================================================
+   Vivaldi custom UI — Tokyo Night Storm
+   Activation : Vivaldi Settings → Appearance → Use Custom UI Modifications
+                Cocher + pointer ce fichier (~/.config/vivaldi-custom.css)
+   ============================================================================= */
+
+/* Variables Tokyo Night Storm */
+:root {
+  --tn-bg:          #24283b;
+  --tn-bg-dark:     #1f2335;
+  --tn-bg-darker:   #1a1b26;
+  --tn-bg-hl:       #292e42;
+  --tn-fg:          #c0caf5;
+  --tn-fg-dark:     #a9b1d6;
+  --tn-comment:     #565f89;
+  --tn-blue:        #7aa2f7;
+  --tn-magenta:     #bb9af7;
+  --tn-red:         #f7768e;
+}
+
+/* === Barre d'onglets : fond global === */
+#tabs-container,
+.tabbar-wrapper,
+.toolbar-tabbar {
+  background-color: var(--tn-bg-dark) !important;
+}
+
+/* === Onglet actif === */
+.tab-position .tab.active,
+.tab.active {
+  background-color: var(--tn-bg) !important;
+  color: var(--tn-fg) !important;
+}
+
+.tab.active::before {
+  background-color: var(--tn-blue) !important;
+}
+
+/* === Onglets inactifs === */
+.tab {
+  background-color: var(--tn-bg-darker) !important;
+  color: var(--tn-fg-dark) !important;
+  border: none !important;
+}
+
+.tab:hover {
+  background-color: var(--tn-bg-hl) !important;
+  color: var(--tn-fg) !important;
+}
+
+/* === Indicateur audio/loading sur les onglets === */
+.tab .audio,
+.tab .loading-indicator {
+  color: var(--tn-blue) !important;
+}
+
+/* === Bouton fermer onglet === */
+.tab .close {
+  color: var(--tn-fg-dark) !important;
+}
+
+.tab .close:hover {
+  background-color: var(--tn-red) !important;
+  color: var(--tn-bg-darker) !important;
+}
+
+/* === Nouvel onglet (bouton +) === */
+button.newtab {
+  background-color: transparent !important;
+  color: var(--tn-fg-dark) !important;
+}
+
+button.newtab:hover {
+  background-color: var(--tn-bg-hl) !important;
+  color: var(--tn-blue) !important;
+}

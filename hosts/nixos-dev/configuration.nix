@@ -52,6 +52,14 @@
                                                        #  -> Sunshine démarre tout seul)
   services.xserver.desktopManager.xfce.enable = true;  # XFCE (X11) — secours
 
+  # XDG portals — sélecteurs de fichier modernes + screensharing dans Vivaldi/Slack
+  # (hyprland est déjà tiré par programs.hyprland, on ajoute gtk pour les dialogs)
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    config.common.default = "*";
+  };
+
   # --- Son (PipeWire) ---------------------------------------------------------
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
