@@ -51,6 +51,15 @@
     # Clipboard manager
     wl-clipboard
     cliphist
+    # Dev — JS/TS toolchain (projet quizz-mariage : Next.js + SQLite + Drizzle)
+    nodejs_22
+    pnpm
+    # Build natif pour modules npm avec addons C++ (ex: better-sqlite3)
+    python3
+    gcc
+    gnumake
+    # SQLite CLI (debug DB du quizz, drizzle-kit studio en alternative)
+    sqlite
   ];
 
   fonts.fontconfig.enable = true;
