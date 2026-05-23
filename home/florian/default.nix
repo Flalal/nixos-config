@@ -32,6 +32,7 @@
     libsecret
     vivaldi
     fastfetch
+    discord
     # Polices
     nerd-fonts.jetbrains-mono
     font-awesome
